@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="welcome">Welcome</h1>
+    <h3 id="college"></h3>
+    <p id="qText">How did you do?</p>
+    <script>
+      let firstName = "Henry";
+      let lastName = "Hamilton";
+      let age = 27;
+      let tCreditHours = 62;
+      let newNum = firstName.length + lastName.length;
+      const today = new Date();
+      let tYear = today.getFullYear();
+      let currentYear = Math.ceil(tCreditHours / 30);
+      
+      document.getElementById("welcome").innerHTML +=
+        ", " + firstName + " " + lastName + "!";
+      var cText = document.getElementById("college");
+
+      if (currentYear == 1) {
+        cText.innerHTML = "You are just starting college. Have fun!";
+        newNum += 11;
+      } else if (currentYear == 2) {
+        cText.innerHTML = "You are a college Sophomore.";
+        newNum = 17;
+      } else if (currentYear == 3) {
+        cText.innerHTML = "You are a college Junior.";
+        newNum += age;
+      } else if (currentYear = 4) {
+        cText.innerHTML = "You are graduating at the end of the year!";
+        newNum--;
+      } else {
+        cText.innerHTML = "You are not in college at this time.";
+      }
+      document.getElementById("qText").innerHTML = "New Number: " + newNum;
+
+      if (newNum % 2 == 0) {
+        document.write(
+          "Congrats, " + firstName + " " + lastName + "! You won!"
+        );
+      } else {
+        document.write(
+          "Sorry, Mr. " + lastName + ". You lost. Better luck next time."
+        );
+      }
+    </script>
+
+    <!-- <script>
+      // Functions
+      var pet1 = 2;
+      var pet2 = 3;
+      var petString;
+      function myDogs(puppies) {
+        if (puppies > 0) {
+          puppies++;
+          petString += "<br/>I have " + puppies + " puppies.";
+        } else {
+          petString += "<br/>I have " + puppies + " puppies.";
+        }
+      }
+
+      function myCats(kittens) {
+        petString += "<br/>I have " + kittens + " cats.";
+        if (kittens < 5) {
+          petString += "<br/>I want another cat.";
+          kittens--;
+        } else {
+          myDogs(pet1);
+          kittens = kittens + 3;
+        }
+        return kittens;
+      }
+      petString = "Pet Totals " + pet1 + " " + pet2;
+      pet1 = myCats(pet2);
+      pet2 = pet1 * 2;
+      myDogs(pet2);
+      petString += "<br/>Pet Totals " + pet1 + " " + pet2;
+      document.write(petString);
+    </script> -->
+
+    <!-- <h1 id="details"></h1>
+    <p id="desc"></p>
+    <p id="warning"></p>
+
+    <script>
+      //Objects
+      var dNow = new Date();
+      var yNow = dNow.getFullYear();
+      let bookDetails;
+      let warning;
+      var yrChange = 2016;
+
+      const book = {
+        title: "Javascript and You",
+        author: "Larry Code",
+        year: 2010,
+        genre: "programming",
+        pages: 356,
+        yearsOld: function () {
+          return yNow - this.year;
+        },
+      };
+
+      document.getElementById("details").innerHTML = "Course Details";
+
+      bookDetails =
+        "<i>" +
+        book.title +
+        "</i> by " +
+        book.author +
+        "<br>Published: " +
+        book.year +
+        " (" +
+        book.yearsOld() +
+        " years old)";
+      if (book.year < yrChange) {
+        warning =
+          "<b>NOTE: <i>" +
+          book.title +
+          "</i> contains out-of-date information</b>";
+      } else {
+        warning = "This book is available at the campus bookstore.";
+      }
+      document.getElementById("warning").innerHTML = warning;
+      document.getElementById("desc").innerHTML = bookDetails;
+    </script> -->
+  </body>
+</html>
